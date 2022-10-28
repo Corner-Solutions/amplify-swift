@@ -34,7 +34,7 @@ struct AWSCognitoAuthCredentialStore {
         self.authConfiguration = authConfiguration
         self.keychain = KeychainStore(service: service, accessGroup: accessGroup)
 
-        if !userDefaults.bool(forKey: isKeychainConfiguredKey) {
+        if !userDefaults.bool(forKey: accessGroup != nil ? isKeychainConfiguredKey + accessGroup! : isKeychainConfiguredKey) {
             try? clearAllCredentials()
             userDefaults.set(true, forKey: isKeychainConfiguredKey)
         }

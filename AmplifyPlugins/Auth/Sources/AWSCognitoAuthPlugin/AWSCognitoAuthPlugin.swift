@@ -37,6 +37,7 @@ public final class AWSCognitoAuthPlugin: AWSCognitoAuthPluginBehavior {
     }
 
     /// Instantiates an instance of the AWSCognitoAuthPlugin.
-    public init() {
+    public init(keychainAccessGroup: String?) {
+        self.keychainAccessGroup = keychainAccessGroup
     }
 }

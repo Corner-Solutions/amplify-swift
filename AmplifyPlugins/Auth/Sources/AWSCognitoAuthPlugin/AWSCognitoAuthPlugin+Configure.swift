@@ -15,6 +15,11 @@ import AWSPluginsCore
 import ClientRuntime
 
 extension AWSCognitoAuthPlugin {
+    
+    public func configure(using configuration: Any?, keychainAccessGroup: String?) throws {
+        self.keychainAccessGroup = keychainAccessGroup
+        try self.configure(using: configuration)
+    }
 
     /// Configures AWSCognitoAuthPlugin with the specified configuration.
     ///

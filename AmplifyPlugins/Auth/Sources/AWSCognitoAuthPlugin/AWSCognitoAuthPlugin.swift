@@ -28,6 +28,8 @@ public final class AWSCognitoAuthPlugin: AWSCognitoAuthPluginBehavior {
     var analyticsHandler: UserPoolAnalyticsBehavior!
 
     var taskQueue: TaskQueue<Any>!
+    
+    var keychainAccessGroup: String?
 
     /// The unique key of the plugin within the auth category.
     public var key: PluginKey {
